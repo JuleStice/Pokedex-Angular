@@ -1,0 +1,13 @@
+
+<mat-sidenav-container autosize>
+  <mat-sidenav opened mode="side">
+
+    <app-pokemon-list (pokeEvent)="displayPokemon($event)"></app-pokemon-list>
+
+  </mat-sidenav>
+  <mat-sidenav-content position="end" class="fix">
+
+    <app-pokemon-detail [pokemon]="pokemonP"></app-pokemon-detail>
+  </mat-sidenav-content>
+
+</mat-sidenav-container>

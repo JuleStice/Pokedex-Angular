@@ -1,0 +1,27 @@
+<p>
+  <mat-form-field appearance="fill">
+    <mat-label>Mail</mat-label>
+    <input matInput placeholder="Votre mail" #mail>
+  </mat-form-field>
+  </p>
+  <p>
+  <mat-form-field appearance="fill">
+    <mat-label>Mot de passe</mat-label>
+    <input matInput #pwd>
+  </mat-form-field>
+</p>
+  <button (click)="signUp(mail.value,pwd.value)"> Sign Up</button>
+
+  <p>
+    <mat-form-field appearance="fill">
+      <mat-label>Mail</mat-label>
+      <input matInput placeholder="Votre mail" #mail2>
+    </mat-form-field>
+    </p>
+    <p>
+    <mat-form-field appearance="fill">
+      <mat-label>Mot de passe</mat-label>
+      <input matInput #pwd2>
+    </mat-form-field>
+  </p>
+    <button (click)="login(mail2.value,pwd2.value)"> Login</button>
