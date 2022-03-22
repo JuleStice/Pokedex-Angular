@@ -9,6 +9,10 @@ import { PokemonsModule } from './pokemons/pokemons.module';
 import { AuthentificationComponent } from './authentification/authentification.component';
 import {MatInputModule} from '@angular/material/input';
 import {MatButtonModule} from '@angular/material/button';
+import { MatFormFieldModule } from '@angular/material/form-field';
+
+
+
 
 
 
@@ -24,7 +28,8 @@ import {MatButtonModule} from '@angular/material/button';
     BrowserAnimationsModule,
     HttpClientModule,
     MatInputModule,
-    MatButtonModule
+    MatButtonModule,
+    MatFormFieldModule
   ],
   providers: [],
   bootstrap: [AppComponent]

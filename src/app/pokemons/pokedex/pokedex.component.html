@@ -1,12 +1,16 @@
 
 <mat-sidenav-container autosize>
+
   <mat-sidenav opened mode="side">
+  <mat-tab-group>
+    <mat-tab label="Liste Pokemon">
+      <app-pokemon-list (pokeEvent)="displayPokemon($event)"></app-pokemon-list>
+  </mat-tab>
+    <mat-tab label="My Team"><app-team></app-team> </mat-tab>
+  </mat-tab-group>
+</mat-sidenav>
 
-    <app-pokemon-list (pokeEvent)="displayPokemon($event)"></app-pokemon-list>
-
-  </mat-sidenav>
   <mat-sidenav-content position="end" class="fix">
-
     <app-pokemon-detail [pokemon]="pokemonP"></app-pokemon-detail>
   </mat-sidenav-content>
 

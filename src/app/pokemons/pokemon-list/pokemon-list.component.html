@@ -11,8 +11,8 @@
       <p matLine>
       <span> {{pokemon.id}} </span>
       <span class="demo-2"> . {{pokemon.name}} </span>
+      <img class="pokeball" src ="../../../assets/img/pokeball.png" alt="{{pokemon.id}}" (click)="addPokemon(pokemon)">
       </p>
-      <!--<a routerLink="/pokemon-list/{{pokemon.id}}"></a>-->
   </mat-list-item>
 </mat-nav-list>
 

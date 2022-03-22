@@ -1,6 +1,7 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, tap } from 'rxjs';
+import { AuthentificationService } from '../authentification.service';
 import { PagedData } from './paged-data.model';
 import { Pokemon } from './pokemon.model';
 
@@ -11,9 +12,10 @@ import { Pokemon } from './pokemon.model';
 export class PokemonService {
 
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private auth : AuthentificationService) { }
 
   urlAPI = "http://app-ec21e68e-3e55-42d7-b1ae-3eef7507a353.cleverapps.io";
+
 
 
   getPokemonsInit(): Observable<PagedData<Pokemon>>{

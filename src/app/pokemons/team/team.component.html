@@ -1,0 +1,16 @@
+<mat-nav-list class="pokedex-list">
+
+    <p>Nombre Pokemons Team : {{myTeamPokemon.length}} /6</p>
+
+  <mat-list-item *ngFor="let pokemon of  myTeamPokemon; let index = index">
+      <img matListAvatar src="assets\img\sprites\{{ pokemon.id }}.png" alt="pokemon{{pokemon.id}}">
+      <p *ngIf="pokemon.id==0" matLine>
+          <span> Vide </span>
+      </p>
+      <p *ngIf="pokemon.id!=0" matLine>
+        <span> {{pokemon.id}}. {{pokemon.name}} </span>
+        <img class="delete" src ="../../../assets/img/delete.png" alt="delete" (click)="removePokemon(index)">
+    </p>
+  </mat-list-item>
+
+</mat-nav-list>

@@ -3,6 +3,7 @@ import { PagedData } from '../paged-data.model';
 import { Pokemon } from '../pokemon.model';
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 import { PokemonService } from '../pokemon.service';
+import { TeamService } from '../team.service';
 
 @Component({
   selector: 'app-pokemon-list',
@@ -15,13 +16,9 @@ export class PokemonListComponent implements OnInit {
   infiniteScroll?: InfiniteScrollModule;
   pokemonD?:Pokemon;
   search?:string;
-
   @Output() pokeEvent = new EventEmitter<Pokemon>()
 
-
-
-  constructor(private pokemonService: PokemonService) { }
-
+  constructor(private pokemonService: PokemonService, private teamService: TeamService) { }
 
   ngOnInit(): void {
 
@@ -31,6 +28,7 @@ export class PokemonListComponent implements OnInit {
   onScroll(e: InfiniteScrollModule){
     console.log('scrolled!!');
     this.infiniteScroll = e;
+
     if (this.pokemons){
       this.pokemonService.getPokemons(this.pokemons.offset).subscribe(pokemon => {
 
@@ -48,12 +46,11 @@ export class PokemonListComponent implements OnInit {
   }
 
   initPokemon(){
-
       this.pokemonService.getPokemonsInit().subscribe(pokemon =>{
       this.pokemons= pokemon;
       this.pokemons.offset += this.pokemons.limit;
       });
-  }
+    }
 
 
   onChange(search: string) {
@@ -69,7 +66,11 @@ export class PokemonListComponent implements OnInit {
   clickPokemon(pokemon: Pokemon){
 
     this.pokeEvent.emit(pokemon)
+  }
 
+  addPokemon(pokemon: Pokemon){
+    console.log(pokemon)
+    this.teamService.addPokemonList(pokemon.id);
   }
 
 }

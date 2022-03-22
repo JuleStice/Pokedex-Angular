@@ -13,14 +13,16 @@ import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 import { PokedexComponent } from './pokedex/pokedex.component';
 import {MatFormFieldModule,} from '@angular/material/form-field';
 import { FormsModule } from '@angular/forms';
-import {MatInputModule} from '@angular/material/input';
-import {MatButtonModule} from '@angular/material/button';
+import { MatInputModule } from '@angular/material/input';
+import { TeamComponent } from './team/team.component';
+import {MatTabsModule} from '@angular/material/tabs';
 
 
 @NgModule({
   declarations: [
     PokemonListComponent,
     PokemonDetailComponent,
+    TeamComponent,
     PokedexComponent
   ],
   imports: [
@@ -35,7 +37,8 @@ import {MatButtonModule} from '@angular/material/button';
     InfiniteScrollModule,
     MatFormFieldModule,
     MatInputModule,
-    MatButtonModule,
+    MatTabsModule,
+
     FormsModule
   ]
 })

@@ -23,8 +23,6 @@ export class PokemonDetailComponent implements OnChanges {
     }
   }
 
-
-
   playPokemonSound(id: number){
     new Audio(`../../../assets/audio/${id}.mp3`).play()
   }

@@ -12,3 +12,15 @@
   overflow: auto;
   height: 85vh;
 }
+
+.pokeball{
+  height: 3vh;
+  //margin-right: 0px;
+  margin-top: -5px;
+  position: absolute;
+  right:3vh;
+}
+
+.pokeball:hover{
+height:4vh;
+}

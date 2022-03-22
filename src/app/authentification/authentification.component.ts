@@ -1,6 +1,8 @@
 import { HttpClient, HttpResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { AuthentificationService } from '../authentification.service';
+import { PokemonService } from '../pokemons/pokemon.service';
 
 @Component({
   selector: 'app-authentification',
@@ -9,11 +11,13 @@ import { AuthentificationService } from '../authentification.service';
 })
 export class AuthentificationComponent implements OnInit {
 
-  constructor(private authService: AuthentificationService) { }
+  constructor(private authService: AuthentificationService, private router: Router, private pokemonService: PokemonService) { }
 
   mail ?: string;
   pwd ?: string;
+
   ngOnInit(): void {
+
   }
 
   signUp(mail:string, password: string){
@@ -23,7 +27,15 @@ export class AuthentificationComponent implements OnInit {
   }
 
   login(mail:string, password: string){
-    this.authService.login(mail, password).subscribe(res => {console.log(res)});
+    this.authService.login(mail, password).subscribe(res => {
+      console.log(res);
+      this.authService.accessToken = res.access_token
+      this.router.navigateByUrl("/pokedex");
+    });
+
+
   }
+
+
 
 }
