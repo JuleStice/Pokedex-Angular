@@ -28,3 +28,4 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 créer nv module : ng g m nom
 créer nv classe : ng g c nom
+"# Pokedex-Angular" 
